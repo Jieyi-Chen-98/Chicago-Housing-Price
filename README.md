@@ -34,20 +34,27 @@ The merged data contains 1,232 observations of zipcode-year from 2000 to 2021 an
 ### Static Plots
 We investigate basic information for our study by creating four kinds of static plots:  
 1. box plots to show the trend of housing price and median income from 2011 to 2019  
-![Figure 1](images/11.housing.png | width = 100)
-<Figure1 src = "images/11.housing.png" width="512" height="512">
+<img src = "images/11.housing.png" width="512" height="512">
 2. maps of housing price changes in Chicago by zip code 2011 v.s 2019  
+<img src = "images/11.income.png" width="512" height="512">
 3. treeplot to show distributions for racial composition in Chicago 2011 v.s 2019  
+<img src = "images/11.race2011.png" width="512" height="512">
+<img src = "images/11.race2019.png" width="512" height="512">
 4. a correlation plot between time-variant variables    
+<img src = "images/11.correlation.png" width="512" height="512">
 
 ### Interactive Plots
 In the “Distribution” tab, we show how the distribution of housing prices relate to that of predictors each year across regions. In the “Time Trend” one, we present the time trends for housing prices and each predictor in each zip code area, trying to check the association in one region but across years.  
+[linked phrase](https://jieyi-chen-98.shinyapps.io/final-project-jieyi_hanzhe_jaeho/)
 
 ### Regression
-We conduct a regression with two models - pooled and fixed-effect models - using ‘lm’ function with ‘as.factor’ argument for time trends fixed, and ‘Stargazer’ package for a result table.    
+We conduct a regression with two models - pooled and fixed-effect models - using *lm* function with *as.factor* argument for time trends fixed, and *Stargazer* package for a result table.    
 
 ### Text Analysis
 We use two articles before and after Covid for text analysis, presuming the difference in nuance and expectation toward the housing market. Plus, we deal with all the negation words to avoid wrong sentiments. Based on those articles, we conduct sentiment analysis.  
+<img src = "images/21.bing.png" width="512" height="512">
+<img src = "images/21.afinn.png" width="512" height="512">
+<img src = "images/21.nrc.png" width="512" height="512">
 
 ## Weakness and Difficulties
 We have some difficulties regarding collecting data. First, we can only get access to certain year data of bus stops and grocery stores. Second, we cannot find or measure other potential predictors such as libraries, parks, education, pollution, and high-way. Third, due to the limit of ACS data at the zip code level, we only have data for nine years from 2011 to 2019. If we get more observations, the regression should be more precise. Fourth, we did not scrape more articles to show a clear trend of sentiment among Chicago residents. Primarily, many websites like WSJ prohibit web scraping. Fifth, in interactive plots, we intended to have the function of clicking one region and showing the according time trend. But using the “leaflet” library takes too much time that we cannot realize it.  
