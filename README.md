@@ -35,7 +35,7 @@ The merged data contains 1,232 observations of zipcode-year from 2000 to 2021 an
 We investigate basic information for our study by creating four kinds of static plots:  
 1. box plots to show the trend of housing price and median income from 2011 to 2019  
 ![Figure 1](images/11.housing.png | width = 100)
-<img src = "images/11.housing.png" width="512" height="512">
+<Figure1 src = "images/11.housing.png" width="512" height="512">
 2. maps of housing price changes in Chicago by zip code 2011 v.s 2019  
 3. treeplot to show distributions for racial composition in Chicago 2011 v.s 2019  
 4. a correlation plot between time-variant variables    
