@@ -8,8 +8,6 @@
 
 # Introduction <a name="intro"></a>
 
-## Research Question
-
 What factors make a community livable or valuable in Chicago? Conversely, do some living environments or conditions decrease the value of a community? For example, current gun-related violence cases seemingly affect the value of one of the neighborhoods in the city.   
 
 The research question is: whether racial composition, public safety, socio-economic, and public provisions status would affect community values in Chicago. The housing value in a zip code area in one year is shown by the average of twelve quarters to absorb seasonal trends. We measure public safety by the total number of major crimes such as homicide and gun violence. Socio-economic status is measured by four variables: median income, median age, racial composition, and bachelor or higher rate. The number of grocery stores and bus stops are used to measure the level of public services. 
@@ -34,27 +32,18 @@ The merged data contains 1,232 observations of zipcode-year from 2000 to 2021 an
 ### Static Plots
 We investigate basic information for our study by creating four kinds of static plots:  
 1. box plots to show the trend of housing price and median income from 2011 to 2019  
-<img src = "images/11.housing.png" width="512" height="512">
 2. maps of housing price changes in Chicago by zip code 2011 v.s 2019  
-<img src = "images/11.income.png" width="512" height="512">
 3. treeplot to show distributions for racial composition in Chicago 2011 v.s 2019  
-<img src = "images/11.race2011.png" width="512" height="512">
-<img src = "images/11.race2019.png" width="512" height="512">
 4. a correlation plot between time-variant variables    
-<img src = "images/11.correlation.png" width="512" height="512">
 
 ### Interactive Plots
 In the “Distribution” tab, we show how the distribution of housing prices relate to that of predictors each year across regions. In the “Time Trend” one, we present the time trends for housing prices and each predictor in each zip code area, trying to check the association in one region but across years.  
-[linked phrase](https://jieyi-chen-98.shinyapps.io/final-project-jieyi_hanzhe_jaeho/)
 
 ### Regression
 We conduct a regression with two models - pooled and fixed-effect models - using *lm* function with *as.factor* argument for time trends fixed, and *Stargazer* package for a result table.    
 
 ### Text Analysis
 We use two articles before and after Covid for text analysis, presuming the difference in nuance and expectation toward the housing market. Plus, we deal with all the negation words to avoid wrong sentiments. Based on those articles, we conduct sentiment analysis.  
-<img src = "images/21.bing.png" width="512" height="512">
-<img src = "images/21.afinn.png" width="512" height="512">
-<img src = "images/21.nrc.png" width="512" height="512">
 
 ## Weakness and Difficulties
 We have some difficulties regarding collecting data. First, we can only get access to certain year data of bus stops and grocery stores. Second, we cannot find or measure other potential predictors such as libraries, parks, education, pollution, and high-way. Third, due to the limit of ACS data at the zip code level, we only have data for nine years from 2011 to 2019. If we get more observations, the regression should be more precise. Fourth, we did not scrape more articles to show a clear trend of sentiment among Chicago residents. Primarily, many websites like WSJ prohibit web scraping. Fifth, in interactive plots, we intended to have the function of clicking one region and showing the according time trend. But using the “leaflet” library takes too much time that we cannot realize it.  
@@ -62,18 +51,29 @@ We have some difficulties regarding collecting data. First, we can only get acce
 # Results of Analyses <a name="results"></a>
 ## Static Plots
 1. We compare the housing prices and median income in 2011 to those of 2019 to show the trend. It turns out that housing prices and median income have increased significantly hand in hand. 
-2. Using heatmap to compare 2011 and 2019 housing prices in Chicago, we can tell from that the housing prices across all areas have risen. The increase of housing prices is most obvious in downtown and north. 
+<img src = "images/11.housing.png" width="512" height="512">
+<img src = "images/11.income.png" width="512" height="512">
+2. Using heatmap to compare 2011 and 2019 housing prices in Chicago, we can tell from that the housing prices across all areas have risen. The increase of housing prices is most obvious in downtown and north.  
+<img src = "images/11.housing2011.png">
+<img src = "images/11.housing2019.png">
 3. Race distribution for Chicago changed, the white rate increase by 1.6%, asian rate increase by 1.5% and the black rate decrease by 2% from 2011 to 2019. 
+<img src = "images/11.race2011.png" width="512" height="512">
+<img src = "images/11.race2019.png" width="512" height="512">
 4. We use a correlation plot to visualize the correlation between dependent variables and predictors. It shows that our hypotheses are correct except for age.  
+<img src = "images/11.correlation.png" width="512" height="512">
 
 ## Implications from Dynamic Choropleths
 In the “Distribution” tab, we can see that the areas with higher average housing prices have fewer crimes, higher income, and higher bachelor rate across years. Interestingly, the zip code areas with lower housing prices tend to have more bus stops. We first treat the number of bus stops as indication for convenience and access to public services. But it turns out that bus stop number is related to the size and purchasing power of private cars in one region.  
+Please check the shiny page here: [https://jieyi-chen-98.shinyapps.io/final-project-jieyi_hanzhe_jaeho/](https://jieyi-chen-98.shinyapps.io/final-project-jieyi_hanzhe_jaeho/)
 
 ## Results of Regression
 The table displays the result of pooled and unit fixed-effect linear models. They show similar results and are aligned with our hypotheses. The bachelor or higher rate, White and Asian rate are significant predictors. Those factors positively relate to housing price. Whereas age and Black rate are negatively associated with house values. Notably, income becomes insignificant in the fixed-effect model, showing that income should not affect housing prices after partialling out region specific effects.  
 
 ## Text Analysis
 The ‘bing’ dictionary supports our expectation that the sentiment would change after the Covid. Whereas the other two dictionaries ‘afinn’ and ‘nrc’ do not show significant change. This might come from lack of article sources and limited dictionaries.  
+<img src = "images/21.bing.png" width="512" height="512">
+<img src = "images/21.afinn.png" width="512" height="512">
+<img src = "images/21.nrc.png" width="512" height="512">
 
 # Discussion and Future Work <a name="discussion"></a>
 Even if our models and static and interactive plots perform in achieving meaningful results as seen above, we acknowledge that insufficient covariates are the first and foremost weakness in our exercise. Variables representing living qualities such as transportation and farmers’ markets are not available.  
