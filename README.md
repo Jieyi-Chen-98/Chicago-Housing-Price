@@ -1,14 +1,14 @@
----
-title: "House Valuation in Chicago"
-author: "Jieyi Chen, Hanzhe Zhou, Jaeho Hahm"
-date: "3/17/2022"
-output:
-  html_document:
-    section_divs: yes
-    toc: true
-    toc_float: true
-    code_folding: hide
----
+# ---
+# title: "House Valuation in Chicago"
+# author: "Jieyi Chen, Hanzhe Zhou, Jaeho Hahm"
+# date: "3/17/2022"
+# output:
+#   html_document:
+#     section_divs: yes
+#     toc: true
+#     toc_float: true
+#     code_folding: hide
+# ---
 
 1. [Introduction](#intro)
 2. [Data and Approaches](#data)
